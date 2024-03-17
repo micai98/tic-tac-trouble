@@ -1,0 +1,215 @@
+html {
+  background-color: rgb(113,53,101);
+  animation: bg-gradient 30s normal forwards ease-in-out infinite;
+  background: linear-gradient(0deg, rgba(0,0,0,0.35) 0%, rgba(255,255,255,0) 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 100%;
+  height: 100dvh;
+}
+
+@keyframes bg-gradient {
+  0% {
+    background-color: rgb(213, 64, 109);
+  }
+
+  15% {
+    background-color: rgb(197, 139, 72);
+  }
+
+  30% {
+    background-color: rgb(70, 192, 107);
+  }
+
+  45% {
+    background-color: rgb(46, 112, 151);
+  }
+
+  60% {
+    background-color: rgba(64,125,213,1);
+  }
+
+  85% {
+    background-color: rgb(187, 53, 147);
+  }
+
+  100% {
+    background-color: rgb(213, 64, 109);
+  }
+}
+
+body {
+  text-align: center;
+  
+
+  color: #eee;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.479);
+
+  width: 100%;
+  height: 100%;
+}
+
+body, button, input {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  border-top: 1px solid;
+  border-left: 0; border-right: 0; border-bottom: 0;
+  border-color: rgba(0, 0, 0, 0.479);
+  margin: 1rem 0rem;
+}
+
+input {
+  background-color: #2E2E2E;
+  border: 1px #111 solid;
+  border-radius: 4px;
+  color: #eee;
+  padding: 0.25rem 0.5rem;
+
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button {
+  background-color: #333;
+  border: 1px #111 solid;
+  border-radius: 4px;
+  color: #eee;
+  padding: 0.25rem 0.5rem;
+}
+
+button:hover {
+  background-color: #3A3A3A;
+  transition: 0.1s;
+}
+
+button:active {
+  background-color: #262626;
+}
+
+input:hover {
+  transition: 0.1s;
+  background-color: #313131;
+}
+
+input:focus {
+  background-color: #232323;
+  outline: 2px solid #666;
+}
+
+.dbg1 {
+  box-shadow: 0px 0px 8px 4px rgba(189, 0, 0, 0.75) inset;
+}
+
+.ttt-info {
+  color: gray;
+  font-size: 0.5rem;
+}
+
+.ttt-panel {
+  display: inline-block;
+  background-color: #3e3e42;
+
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 4px;
+
+  animation: window-appear 0.2s normal forwards ease-in-out;
+}
+
+.ttt-board {
+  display: inline-block;
+  margin: auto;
+  padding: 0rem;
+  
+  
+  border-radius: 4px;
+}
+
+.ttt-board-square {
+  position: relative;
+  margin: 0.1rem;
+  width: 4rem;
+  height: 4rem;
+  min-width: 4rem;
+  min-height: 4rem;
+  padding: 0;
+  border: 0px solid black;
+  border-collapse: collapse;
+  border-radius: 4px;
+
+  background-color: #232323;
+}
+
+.ttt-board-square:hover {
+  transition: 0.1s;
+  background-color: #2A2A2A;
+}
+
+.ttt-board-square.win-blue {
+  transition: 0.2s;
+  background-color: rgb(64, 64, 128);
+}
+
+.ttt-board-square.win-red {
+  transition: 0.2s;
+  background-color: rgb(128, 64, 64);
+}
+
+.ttt-board-square div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ttt-board-square svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(150%);
+
+  animation: ttt-symbol-show 0.1s normal forwards ease-in-out;
+}
+
+@keyframes ttt-symbol-show {
+  from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(200%);
+  }
+  to {
+    opacity: 1;
+      transform: translate(-50%, -50%) scale(150%);
+  }
+}
+
+@keyframes window-appear {
+  from {
+    opacity: 0;
+    transform: translate(0, -1rem);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.ttt-board-square small {
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  color: gray;
+  font-size: 0.5rem;
+}
